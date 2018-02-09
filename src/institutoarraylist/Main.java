@@ -46,7 +46,7 @@ public class Main {
         Ciclo daw = new Ciclo("daw", 2000);
 
         //creación de los módulos
-        Modulo modulo1 = new Modulo("Programacion", 8, daw, profeProgra);
+        Modulo prog = new Modulo("Programacion", 8, daw, profeProgra);
         Modulo modulo2 = new Modulo("Entorno de Desarrollo", 3, daw, profeEntorno);
         Modulo modulo3 = new Modulo("DBase", 3, daw, profeDbase);
         Modulo modulo4 = new Modulo("HTML", 8, daw, profeHtml);
@@ -60,22 +60,22 @@ public class Main {
         
         //Creación de notas de los alumnos según módulo
         
-        alumno1.getNotas().add(new Nota(modulo1, 6));
+       // alumno1.getArrayNotas().add(new Nota(prog, 6));
+        //Nota pup = new Nota(modulo1, 7);
+        alumno1.addPupil(new Nota(prog, 99));
         
-        
-        
-        alumno1.getNotas().add(new Nota(modulo2, 7));
-        alumno1.getNotas().add(new Nota(modulo3, 3));
-        alumno2.getNotas().add(new Nota(modulo4, 8));
-        alumno2.getNotas().add(new Nota(modulo2, 6));
-        alumno2.getNotas().add(new Nota(modulo1, 8));
-        alumno2.getNotas().add(new Nota(modulo3, 3));
-        alumno3.getNotas().add(new Nota(modulo3, 7));
-        alumno3.getNotas().add(new Nota(modulo4, 7));
-        alumno4.getNotas().add(new Nota(modulo4, 8));
-        alumno5.getNotas().add(new Nota(modulo4, 3));
-        alumno5.getNotas().add(new Nota(modulo1, 10));
-        alumno5.getNotas().add(new Nota(modulo2, 9));
+        alumno1.getArrayNotas().add(new Nota(modulo2, 7));
+        alumno1.getArrayNotas().add(new Nota(modulo3, 3));
+        alumno2.getArrayNotas().add(new Nota(modulo4, 8));
+        alumno2.getArrayNotas().add(new Nota(modulo2, 6));
+        alumno2.getArrayNotas().add(new Nota(prog, 8));
+        alumno2.getArrayNotas().add(new Nota(modulo3, 3));
+        alumno3.getArrayNotas().add(new Nota(modulo3, 7));
+        alumno3.getArrayNotas().add(new Nota(modulo4, 7));
+        alumno4.getArrayNotas().add(new Nota(modulo4, 8));
+        alumno5.getArrayNotas().add(new Nota(modulo4, 3));
+        alumno5.getArrayNotas().add(new Nota(prog, 10));
+        alumno5.getArrayNotas().add(new Nota(modulo2, 9));
 
         
         //impresión de toda la información del ciclo
