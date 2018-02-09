@@ -62,7 +62,7 @@ public class Main {
         
        // alumno1.getArrayNotas().add(new Nota(prog, 6));
         //Nota pup = new Nota(modulo1, 7);
-        alumno1.addPupil(new Nota(prog, 99));
+        alumno1.addPupil(new Nota(prog, 9));
         
         alumno1.getArrayNotas().add(new Nota(modulo2, 7));
         alumno1.getArrayNotas().add(new Nota(modulo3, 3));
@@ -75,7 +75,7 @@ public class Main {
         alumno4.getArrayNotas().add(new Nota(modulo4, 8));
         alumno5.getArrayNotas().add(new Nota(modulo4, 3));
         alumno5.getArrayNotas().add(new Nota(prog, 10));
-        alumno5.getArrayNotas().add(new Nota(modulo2, 9));
+        alumno5.addPupil(new Nota(prog, 18));
 
         
         //impresión de toda la información del ciclo

@@ -30,27 +30,46 @@ public class Alumno extends Persona {
 
     public void addPupil(Nota moduloMasNota) {
         boolean encontrado = false;
+        try {
+            if (moduloMasNota.getNota() < 0 || moduloMasNota.getNota() > 10) {
+                //Si la nota no es correcta se pone como -1
+                moduloMasNota.setNota((float)-1);
+                this.arrayNotas.add(moduloMasNota);
+                String nombre=moduloMasNota.getNombre().getNombreModulo();
+                Error error1 = new Error("\tNota menor que 1 o mayor que 10 en El modulo  "+nombre);
+                throw error1;
+            } else {
+                try{
+                Iterator<Nota> iterator = arrayNotas.iterator();
+                Nota notas = null;
 
-        Iterator<Nota> iterator = arrayNotas.iterator();
-        Nota notas = null;
+                int i = 0;
+                while (iterator.hasNext() && (!(encontrado))) {
+                    notas = iterator.next();
 
-        int i = 0;
-        while (iterator.hasNext() && (!(encontrado))) {
-            notas = iterator.next();
-
-            if ((notas.getNombre().getNombreModulo().equalsIgnoreCase(moduloMasNota.getNombre().getNombreModulo()))) {
-                encontrado = true;
+                    if ((notas.getNombre().getNombreModulo().equalsIgnoreCase(moduloMasNota.getNombre().getNombreModulo()))) {
+                        encontrado = true;
+                        String nombred=moduloMasNota.getNombre().getNombreModulo();
+                         Error error2 = new Error("\tEl modulo  "+nombred+" ya Existe");
+                         throw error2;
+                    }
+                }
+                if (!(encontrado)) {
+                    this.arrayNotas.add(moduloMasNota);
+                }
+                }
+                catch(Error error2){
+                    System.out.printf(error2.getMessage());
+                }
             }
-        }
-        if (!(encontrado)) {
-            this.arrayNotas.add(moduloMasNota);
+        } catch (Error error1) {
+            
+            System.out.printf(error1.getMessage());
         }
     }
 
-
-
 //comprobacion por alumno: todos los módulos están aprobados?
-public boolean todosModulosAprobados() {
+    public boolean todosModulosAprobados() {
         boolean todos = true;
 
         Iterator<Nota> it = this.arrayNotas.iterator();
